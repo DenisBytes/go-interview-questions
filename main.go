@@ -161,18 +161,23 @@ func main() {
 	questions = append(questions, "How do we do benchmarking in Go?")
 	questions = append(questions, "What is the difference between an int and a uint, and how does this relate to mechanical sympathy?")
 	questions = append(questions, "What are pointers? Show us pointers at work in code.")
-	// DONE UNTIL HERE
 	questions = append(questions, "Explain value semantics and pointer semantics. What are rules-of-thumb for using one versus the other?")
 	questions = append(questions, "What is the stack, and what is the heap?")
 	questions = append(questions, "What is escape analysis?")
 	questions = append(questions, "What is an interface?")
+
+
+	// SKIPPED
 	questions = append(questions, "What are method sets, and how do you use them?")
+	// SKIPPED
 	questions = append(questions, "What is a type set?")
+
+
 	questions = append(questions, "What is concrete data?")
 	questions = append(questions, "Explain generics.")
 	questions = append(questions, "What is the difference between concurrency and parallelism?")
+
 	questions = append(questions, "What is a Goroutine?")
-	questions = append(questions, "Describe a time when you used goroutines and channels?")
 	questions = append(questions, `Should you use buffered channels? Why or why not?`)
 	questions = append(questions, "What is the difference between switch and select?")
 	questions = append(questions, "Explain internal, external, and data latencies in Go.")
@@ -277,15 +282,10 @@ func main() {
 	// ------------------------------------------------
 	// ADVANCED QUESTIONS
 	// ------------------------------------------------
-	questions = append(questions, `Teach us something most people don't know about Go.`)
 	questions = append(questions, `Explain alignment, padding bytes, and mechanical sympathy.`)
-	questions = append(questions, `What don't you like about the Go programming language?`)
 	questions = append(questions, `What's the difference between synchronization & orchestration?`)
 	questions = append(questions, "How might you use a nil channel?")
-	questions = append(questions, "Explain how a linked list works.")
 	questions = append(questions, "What is iota? Can you show us how to use iota with bitshifting?")
-	questions = append(questions, "Have you worked on a large-scale project using Go? If so, how did Go's features contribute to the project's success?")
-	questions = append(questions, "What tools do you typically use for testing Go code?")
 	questions = append(questions, "What is a multiplexer?")
 	questions = append(questions, "What is the difference between TCP and UDP?")
 
@@ -328,41 +328,6 @@ func main() {
 	chi
 	zshell
 	`)
-
-	// ------------------------------------------------
-	// SOFT SKILL QUESTIONS
-	// ------------------------------------------------
-	questions = append(questions, "Tell us about your soft-skills.")
-	questions = append(questions, "What makes you a valuable member of a team?")
-	questions = append(questions, "Can you argue in favor of your perspective, and accept when your perspective isn't chosen?")
-	questions = append(questions, "Tell us about a time you failed, and what you learned from it.")
-	questions = append(questions, "Tell us about a time you succeeded, and why you succeeded.")
-	questions = append(questions, "What do you do to stay current with programming?")
-
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
-	questions = append(questions, ``)
 
 	// Print out each question
 	for i, question := range questions {
