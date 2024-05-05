@@ -165,18 +165,13 @@ func main() {
 	questions = append(questions, "What is the stack, and what is the heap?")
 	questions = append(questions, "What is escape analysis?")
 	questions = append(questions, "What is an interface?")
-
-
 	// SKIPPED
 	questions = append(questions, "What are method sets, and how do you use them?")
 	// SKIPPED
 	questions = append(questions, "What is a type set?")
-
-
 	questions = append(questions, "What is concrete data?")
 	questions = append(questions, "Explain generics.")
 	questions = append(questions, "What is the difference between concurrency and parallelism?")
-
 	questions = append(questions, "What is a Goroutine?")
 	questions = append(questions, `Should you use buffered channels? Why or why not?`)
 	questions = append(questions, "What is the difference between switch and select?")
@@ -284,6 +279,7 @@ func main() {
 	// ------------------------------------------------
 	questions = append(questions, `Explain alignment, padding bytes, and mechanical sympathy.`)
 	questions = append(questions, `What's the difference between synchronization & orchestration?`)
+	// SKIPPED
 	questions = append(questions, "How might you use a nil channel?")
 	questions = append(questions, "What is iota? Can you show us how to use iota with bitshifting?")
 	questions = append(questions, "What is a multiplexer?")

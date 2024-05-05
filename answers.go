@@ -34,7 +34,7 @@ func YouCanDoIt() {
 								The third one is the same one as the first`)
 
 	answers = append(answers, `You can use as a key all types that are comparable.
-								Comparable Types = Every types apart funcs, and slices and arrays 
+								Comparable Types = Every types apart from funcs, and slices and arrays 
 								that have non-comparable types themself `)
 
 	answers = append(answers, `To write idiomatic code it means write Go in a certain way / in a standard way.
@@ -288,4 +288,131 @@ func YouCanDoIt() {
 									even if the receiver is not ready to receive the data immediately.
 								Unbuffered channels enforce synchronous communication, 
 									causing senders to block until there's a receiver ready to receive the data, and vice versa.`)
+
+	answers = append(answers,  `The switch statement is used for conditional based on the value of an expression or type of a var
+								The select statment is used for handling multiple channel operations, 
+								allowing a program to wait on multiple send or receive operations and execute the first one that becomes ready`)
+
+	answers = append(answers,  `Internal latency refers to the time spent within the application itself, excluding network overhead and external factors.
+								External latency includes all delays that occur outside the application, 
+									such as network latency, the time taken by external services to respond, 
+									and the time spent waiting for resources from external systems.
+								Data latency specifically refers to the time it takes for data to travel from its source to its destination`)
+
+	answers = append(answers,  `sync.WaitGroup is used for waiting for a collection of goroutines to finish.
+								atomic.AddInt64 is used for atomic operations on integers, providing a way to 
+									safely increment or decrement shared integers without locks.
+								sync.Mutex is a lock used to protect shared resources from concurrent access, 
+									ensuring that only one goroutine can access the resource at a time.`)
+
+	answers = append(answers,  `Yes, because slices in Go are reference types, and the elements of a slice are references to the underlying array elements`)
+
+	answers = append(answers,  `Just change the 3 to a 2:
+	
+	func main() {
+		var wg sync.WaitGroup
+		wg.Add(2)
+	
+		go func() {
+			fmt.Println("process one")
+			wg.Done()
+		}()
+	
+		go func() {
+			fmt.Println("process two")
+			wg.Done()
+		}()
+	
+		wg.Wait()
+	}`)
+
+	answers = append(answers,  `Just change the 3 to a 2. and a add a mutex to prevent race condition:
+	
+	func main() {
+		var counter int
+		var wg sync.WaitGroup
+		var mu sync.Mutex()
+		wg.Add(2)
+	
+		go func() {
+			mu.Lock()
+			counter++
+			mu.Unlock()
+			wg.Done()
+		}()
+	
+		go func() {
+			mu.Lock()
+			counter++
+			mu.Unlock()
+			wg.Done()
+		}()
+	
+		wg.Wait()
+		fmt.Println("Final Counter:", counter)
+	}`)
+
+	answers = append(answers,  `The first print will print the "original" values, beacuse v is a just a copy of the value, not the actual reference of the elements
+	
+	// var sports [5]string
+	sports := make([]string, 5)
+	sports[0] = "ski"
+	sports[1] = "surf"
+	sports[2] = "swim"
+	sports[3] = "sail"
+	sports[4] = "sumo wrestling"
+
+	for i, v := range sports {
+		sports[i] = "biking"
+		fmt.Println(v)			// ???
+	}
+
+	fmt.Println(sports)			// ???`)
+
+	answers = append(answers,  `Alignment refers to the requirement that certain data types must start at memory addresses that are multiples of a certain value.
+									For example, a 64-bit integer must start at an address that is a multiple of 8 bytes because it occupies 8 bytes of memory.
+								Padding bytes are extra bytes added to a data structure to ensure that it meets alignment requirements or to fill space between elements. 
+									These bytes do not contain meaningful data but are necessary for the correct operation of the system.
+								Mechanical sympathy is a term that refers to the design and implementation of software in a way that is considerate of the underlying hardware. 
+									It involves writing code that is efficient and compatible with the hardware's capabilities and constraints.`)
+
+	answers = append(answers,  `Synchronization is about coordinating the access to shared resources among concurrent tasks
+									to prevent race conditions and ensure data consistency.
+								Orchestration is about managing the execution of a set of tasks or processes to achieve a common goal, 
+									often in a distributed or microservices environment, 
+									where tasks need to be executed in a specific sequence or based on certain conditions.`)
+
+
+	answers = append(answers,  `iota is an identifier that represnts and untyped integer ordinal number.
+								Normally is used to number constants (insed cont bracket) that are related in some way`)
+
+	answers = append(answers,  `Multiplexer is a mechanism for selecting one of several inputs and directing it to a single output based on certain criteria.
+								One common use of multiplexing in Go is in web servers, 
+									where incoming HTTP requests are routed to different handlers based on the request's URL path. 
+									This is a form of multiplexing where the input (HTTP request) is selected based on its content (URL path), 
+									and the output (HTTP response) is generated by the selected handler.`)
+
+	answers = append(answers,  `The main difference between TCP and UDP, is that 
+								TCP can send a lot of data and in a reliable and ordered way,
+								while UDP is stateless, but is fast. To achieve reliability you 
+								may want to use another protocol on top of it like  RTP`)
+
+	answers = append(answers,  `after adding the new person to the slice. the gc reallocated the slice somewhere else in memory,
+								becuase initially we declared capacity 2, and everytime cap is exceeded the gc reallocates the slice smoewhere else in memory.
+								So the second increment will increment values in two different memory space
+								1st print: 1
+								2nd print: 2`)
+
+	answers = append(answers,  `Cobra is a library to create CLI tools.
+								Viper is a complete configuration solution for Go applications. 
+									It supports all formats (JSON, TOML, YAML, HCL, envfile, Java properties, Python properties, and others), 
+									and it can read from environment variables, config files, remote config systems, and more.
+								OpenTelemetry is a set of APIs, libraries, agents, and instrumentation that standardize 
+									the generation, collection, and description of telemetry data (metrics, logs, and traces) 
+									for analysis in order to understand your software's performance and behavior.
+								Jaeger is a distributed tracing system that helps developers monitor and troubleshoot 
+									microservices-based distributed systems. It provides end-to-end tracing capabilities, 
+									allowing you to trace requests as they travel through your system.
+`)
+
 }
